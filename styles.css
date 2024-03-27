@@ -274,100 +274,74 @@ textarea {
 *, *::before, *::after {
     box-sizing: border-box;
 }
-
 .services-section {
-    text-align: center;
-    padding: 4rem 1rem;
-    background-color: #f4f6fc;
-}
-
-.services-section h2 {
-    color: #305f72;
-    margin-bottom: 2rem;
+  padding: 60px 20px;
+  background-color: #F0F2F5; /* Lighter pastel background for a softer look */
 }
 
 .services-container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 20px;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .service-card {
-    width: calc(50% - 20px);
-    background-color: #ffffff;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 15px;
-    border: 1px solid #DAA520;
-    position: relative;
-    overflow: hidden;
+  background: #ffffff; /* Pure white to contrast softly with the background */
+  border-radius: 16px; /* More pronounced rounded corners for a softer look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: calc(50% - 10px);
+  padding: 25px; /* Slightly increased padding for more space */
+  box-sizing: border-box;
 }
 
-.service-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100px;
-    background-color: #004369;
-    border-radius: 15px 15px 0 0;
-    z-index: 0;
-}
-
-.service-card h3 {
-    margin-top: 2.5rem;
-    color: #003366;
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Enhanced hover effect */
 }
 
 .service-icon {
-    font-size: 3rem;
-    color: #DAA520;
-    margin-bottom: -3rem;
-    position: relative;
-    z-index: 1;
+  color: #89ABE3FF; /* Softened primary color for icons */
+  margin-bottom: 15px; /* Increased spacing for a more airy look */
 }
 
-.service-list {
-    list-style: none;
-    padding: 0;
-    text-align: left;
+h2 {
+  color: #5D5D5D; /* Softer dark shade for better readability */
+  margin-bottom: 40px; /* Increased spacing for a better flow */
+}
+
+h3 {
+  color: #89ABE3FF; /* Matching the icons' softened color */
+  margin: 25px 0 15px;
 }
 
 .service-list li {
-    margin-bottom: 10px;
-    color: #666;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Increased spacing for readability */
 }
 
-.service-list i {
-    color: #DAA520;
-    margin-right: 8px;
+.fa-regular.fa-circle-check {
+  color: #77DD77; /* Pastel success color for checks */
+  margin-right: 10px; /* Slightly more spacing */
 }
 
 .service-button {
-    background-color: #003366;
-    color: #F9F9F9;
-    text-decoration: none;
-    padding: 12px 24px;
-    border-radius: 25px;
-    transition: background-color 0.3s, transform 0.3s;
-    margin-top: 20px;
-    display: inline-block;
-    position: relative;
-    z-index: 1;
-    border: 1px solid #003366;
+  background-color: #89ABE3FF; /* Softened primary color */
+  color: white;
+  padding: 12px 18px; /* Adjusted padding for better touch targets */
+  border-radius: 25px; /* More rounded for a flowy feel */
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-top: 20px;
 }
 
 .service-button:hover {
-    opacity: 90%;
-    transform: translateY(-4px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: #003395;
+  background-color: #6D8EAD; /* Darkened on hover for contrast */
+  transform: scale(1.05); /* Slight enlargement for interactive feedback */
 }
+
 
 @media (max-width: 768px) {
     .services-container {

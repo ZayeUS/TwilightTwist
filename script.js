@@ -31,3 +31,16 @@ window.addEventListener('scroll', () => {
     
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
 }, { passive: true }); // Improve performance by marking the listener as passive
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.visibility = 'visible';
+        }
+      });
+    });
+  
+    observer.observe(document.querySelector('.services-section'));
+  });
