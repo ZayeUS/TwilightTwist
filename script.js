@@ -39,10 +39,11 @@ document.addEventListener("DOMContentLoaded", function() {
   var responseContainer = document.getElementById("formResponse");
 
   form.addEventListener("submit", function(e) {
-    e.preventDefault();
+    e.preventDefault(); // Prevent the default form submission
+    
     var formData = new FormData(form);
 
-    fetch("https://formspree.io/f/xqkryeko", {
+    fetch("https://formspree.io/f/xqkryeko", { // Your actual endpoint here
       method: "POST",
       body: formData,
       headers: {
@@ -52,55 +53,31 @@ document.addEventListener("DOMContentLoaded", function() {
     .then(response => {
       if (response.ok) {
         form.reset(); // Reset the form for the next input
+        
+        // Update for elegant display with icon
         responseContainer.innerHTML = "<p>Thank you for your submission!</p>";
+        responseContainer.style.display = "block"; // Make the response visible
+        responseContainer.style.opacity = "1"; // Reset opacity in case it was faded out before
 
-         // Set timeout to clear the message after 5 seconds (5000 milliseconds)
-         setTimeout(function() {
-          responseContainer.innerHTML = "";
-        }, 3000);
+        // Optional: Hide the message after a few seconds
+        setTimeout(function() {
+          responseContainer.style.opacity = "0";
+          setTimeout(function() {
+            responseContainer.style.display = "none";
+          }, 500); // Wait for the fade-out to finish
+        }, 3000); // Adjust time as needed
       } else {
-        response.json().then(data => {
-          if (data.errors) {
-            responseContainer.innerHTML = "<p>" + data.errors.map(error => error.message).join(", ") + "</p>";
-          } else {
-            responseContainer.innerHTML = "<p>Oops! There was a problem with your submission.</p>";
-          }
-        })
+        // Handle errors or unsuccessful submissions
       }
     })
     .catch(error => {
-      responseContainer.innerHTML = "<p>Oops! There was a problem with your submission.</p>";
+      // Handle network errors
     });
   });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-  var emailField = document.getElementById('email');
-  var nameField = document.getElementById('name');
-  var messageField = document.getElementById('message');
 
-  emailField.addEventListener('input', function() {
-      var feedback = document.getElementById('emailFeedback');
-      if (emailField.validity.typeMismatch) {
-          feedback.textContent = 'Please enter a valid email address.';
-      } else {
-          feedback.textContent = ''; // Clear feedback if valid
-      }
-  });
 
-  // Add similar event listeners for 'nameField' and 'messageField' as needed
-  // For example, checking if 'nameField' is empty:
-  nameField.addEventListener('input', function() {
-      var feedback = document.getElementById('nameFeedback');
-      if (!nameField.value.trim()) {
-          feedback.textContent = 'Please enter your name.';
-      } else {
-          feedback.textContent = ''; // Clear feedback if valid
-      }
-  });
-
-  // You can add more specific validations for each field as per your requirements
-});
 
 
 // When the user scrolls down 20px from the top of the document, show the button

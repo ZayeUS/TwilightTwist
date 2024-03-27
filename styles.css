@@ -485,6 +485,43 @@ font-size: 25px;
 }
 
 
+.form-response {
+  display: none; /* Initially hidden */
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px; /* Space between the form and the response message */
+  background-color: #f9f9f9; /* Light background for the message */
+  border-radius: 5px; /* Slight rounding of corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  font-family: 'Poppins', sans-serif; /* Consistent font */
+  color: #305f72; /* Elegant font color */
+  position: relative; /* For positioning the check icon */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition for showing the message */
+}
+
+.form-response p {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+
+.form-response:before {
+  content: "\f00c"; /* FontAwesome check icon */
+  font-family: "FontAwesome";
+  position: absolute;
+  left: 50%;
+  top: -30px; /* Position above the response box */
+  transform: translateX(-50%);
+  font-size: 24px; /* Icon size */
+  background-color: #f9f9f9; /* Match the response background */
+  color: #78C2AD; /* Icon color */
+  width: 50px; /* Icon background size */
+  height: 50px; /* Icon background size */
+  line-height: 50px; /* Center icon vertically */
+  border-radius: 50%; /* Circular background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Consistent with the response box */
+}
+
 
 
 
