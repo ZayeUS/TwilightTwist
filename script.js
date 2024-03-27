@@ -33,45 +33,89 @@ window.addEventListener('scroll', () => {
 }, { passive: true }); // Improve performance by marking the listener as passive
 
 
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevent form from submitting
 
-  // Basic validation
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const message = document.getElementById('message').value.trim();
+document.addEventListener("DOMContentLoaded", function() {
+  var form = document.getElementById("contactForm");
+  var responseContainer = document.getElementById("formResponse");
 
-  if (!name || !email || !message) {
-    alert('Please fill in all fields.');
-    return; // Stop the function if validation fails
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    var formData = new FormData(form);
+
+    fetch("https://formspree.io/f/xqkryeko", {
+      method: "POST",
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      },
+    })
+    .then(response => {
+      if (response.ok) {
+        form.reset(); // Reset the form for the next input
+        responseContainer.innerHTML = "<p>Thank you for your submission!</p>";
+
+         // Set timeout to clear the message after 5 seconds (5000 milliseconds)
+         setTimeout(function() {
+          responseContainer.innerHTML = "";
+        }, 3000);
+      } else {
+        response.json().then(data => {
+          if (data.errors) {
+            responseContainer.innerHTML = "<p>" + data.errors.map(error => error.message).join(", ") + "</p>";
+          } else {
+            responseContainer.innerHTML = "<p>Oops! There was a problem with your submission.</p>";
+          }
+        })
+      }
+    })
+    .catch(error => {
+      responseContainer.innerHTML = "<p>Oops! There was a problem with your submission.</p>";
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  var emailField = document.getElementById('email');
+  var nameField = document.getElementById('name');
+  var messageField = document.getElementById('message');
+
+  emailField.addEventListener('input', function() {
+      var feedback = document.getElementById('emailFeedback');
+      if (emailField.validity.typeMismatch) {
+          feedback.textContent = 'Please enter a valid email address.';
+      } else {
+          feedback.textContent = ''; // Clear feedback if valid
+      }
+  });
+
+  // Add similar event listeners for 'nameField' and 'messageField' as needed
+  // For example, checking if 'nameField' is empty:
+  nameField.addEventListener('input', function() {
+      var feedback = document.getElementById('nameFeedback');
+      if (!nameField.value.trim()) {
+          feedback.textContent = 'Please enter your name.';
+      } else {
+          feedback.textContent = ''; // Clear feedback if valid
+      }
+  });
+
+  // You can add more specific validations for each field as per your requirements
+});
+
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
   }
+}
 
-  // Further validation can go here (e.g., email format)
-
-  // If all checks pass
-  alert('Thank you for your message!');
-  // Here, you would typically also send the form data to the server
-});
-
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevent traditional form submission
-
-  const formData = new FormData(this);
-
-  fetch('twilighttwistphotobooths@gmail.com', {
-    method: 'POST',
-    body: formData,
-  })
-  .then(response => {
-    if (response.ok) {
-      return response.json();
-    }
-    throw new Error('Network response was not ok.');
-  })
-  .then(data => {
-    console.log(data);
-    alert('Thank you for your message! We will get back to you soon.');
-    // Optionally reset the form or redirect the user
-  })
-  .catch(error => console.error('There was a problem with your fetch operation:', error));
-});
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}

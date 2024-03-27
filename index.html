@@ -91,9 +91,6 @@
                 <i class="fa-regular fa-circle-check"></i> Customizable digital
                 template
               </li>
-              <li>
-                <i class="fa-regular fa-circle-check"></i> Online photo gallery
-              </li>
             </ul>
             <h3>$100/H 
               <br/>
@@ -139,22 +136,35 @@
 
       <!-- Contact us FORM -->
 
-      <section class="contact-us-section">
-        <h2>Contact Us</h2>
-        <form id="contactForm" action="https://formspree.io/f/xqkryeko" method="POST">
-          <div class="form-group">
-            <input type="text" name="name" id="name" placeholder="Your Name" required>
-          </div>
-          <div class="form-group">
-            <input type="email" name="_replyto" id="email" placeholder="Your Email" required>
-          </div>
-          <div class="form-group">
-            <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
-          </div>
-          <button type="submit" class="contact-button">Send Message</button>
-      </form>
+      <section id="contact-us-section" class="contact-us-container">
+        <div class="contact-us-content">
+          <h2>Let's Connect</h2>
+          <p>We're here to help and answer any question you might have. We look forward to hearing from you.</p>
+          <form id="contactForm">
+            <div class="form-group  floating-label">
+              <input type="text" name="name" id="name" placeholder=" Name" required>
+              <label for="name"> Name</label>
+
+            </div>
+            <div class="form-group  floating-label">
+              <input type="email" name="email" id="email" placeholder=" Email" required>
+              <label for="name"> Email</label>
+
+            </div>
+            <div class="form-group  floating-label">
+              <textarea name="message" id="message" placeholder=" Message" required></textarea>
+              <label for="name"> Message</label>
+
+            </div>
+            <button type="submit" class="contact-button">Send Message</button>
+          </form>
+        </div>
       </section>
       
+      <div id="formResponse" class="form-response"></div>
+      
+      </section>
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     </main>
     <footer>
       <!-- Footer content here -->

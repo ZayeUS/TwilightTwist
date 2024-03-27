@@ -8,6 +8,7 @@ ul {
 
 *, *::before, *::after {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 
@@ -310,8 +311,10 @@ textarea {
 }
 
 .service-icon {
+font-size: 25px;
   color: #89ABE3FF; /* Softened primary color for icons */
   margin-bottom: 15px; /* Increased spacing for a more airy look */
+  
 }
 
 .service-card h2 {
@@ -322,7 +325,7 @@ textarea {
 }
 
 .service-card h3 {
-  color: #89ABE3FF; /* Matching the icons' softened color */
+  color: #305f72;
   margin: 25px 0 15px;
   text-align: center;
 }
@@ -366,84 +369,147 @@ textarea {
 
 /* Contact us form */
 
-.contact-us-section {
-  padding: 60px 20px;
-  background-color: #d3e7ee;
+.contact-us-container {
+  background-color: #FAF9F9; /* A very light background */
+  padding: 80px 20px;
   text-align: center;
 }
 
-.contact-us-section h2 {
-  color: #305f72;
-  margin-bottom: 40px;
+.contact-us-content {
+  background-color: #FFFFFF; /* Pure white for contrast */
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.contact-us-container h2 {
+  color: #305f72; /* A soft, deep blue */
+  margin-bottom: 10px;
+}
+
+.contact-us-container p {
+  color: #6C757D; /* Soft grey for text */
+  margin-bottom: 30px;
 }
 
 #contactForm {
-  max-width: 500px;
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.form-group {
-  margin-bottom: 20px;
+#contactForm .form-group input,
+#contactForm .form-group textarea {
+  padding: 15px;
+  border-radius: 20px;
+  border: 1px solid #E3E4E6; /* Very light border */
+  background-color: #EEF2F3; /* Light pastel background */
+  color: #495057; /* Darker text for contrast */
 }
 
-.form-group input, .form-group textarea {
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-family: "Poppins", sans-serif;
-}
-
-.form-group textarea {
-  resize: vertical;
+#contactForm .form-group input:focus,
+#contactForm .form-group textarea:focus {
+  outline: none;
+  border: 1px solid #ADB5BD; /* Slightly darker border on focus */
 }
 
 .contact-button {
-  background-color: #305f72;
-  color: white;
-  padding: 12px 18px;
+  padding: 10px 0;
+  background-color: #78C2AD; /* Soft green */
+  color: #FFFFFF;
   border: none;
-  border-radius: 25px;
+  border-radius: 20px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
-  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  transition: background-color 0.3s;
 }
 
 .contact-button:hover {
-  background-color: #234653;
-  transform: scale(1.05);
+  background-color: #5DA08E; /* A darker shade of the button color for hover state */
 }
 
-/* Classic Elegance Form Styles */
-#contactForm input, #contactForm textarea {
-  border: 1px solid #ccc;
-  background-color: #fff;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
-  padding: 10px;
-  border-radius: 5px;
-}
 
-.contact-button-classic {
-  background-image: linear-gradient(to right, #305f72, #234653);
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border-radius: 5px;
-  box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
-}
-
-.contact-button-classic:hover {
-  background-image: linear-gradient(to right, #234653, #305f72);
-}
-
-#contactForm input:focus, #contactForm textarea:focus {
+#contactForm .form-group input:focus, #contactForm .form-group textarea:focus {
   outline: none;
-  border-color: #89ABE3FF;
-  box-shadow: 0 0 8px rgba(137, 171, 245, 0.8);
-  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: 2px solid #89ABE3FF; /* Highlight color */
+  transition: border 0.3s ease-in-out;
 }
 
+.floating-label {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.floating-label input, .floating-label textarea {
+  width: 100%;
+  padding: 15px 15px 15px 0;
+  border: none;
+  border-bottom: 2px solid #E3E4E6;
+  background-color: transparent;
+  transition: border-color 0.2s;
+}
+
+.floating-label label {
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  pointer-events: none;
+  transition: transform 0.2s ease-out, color 0.2s;
+  transform-origin: center;
+  color: #ADB5BD;
+  opacity: 0;
+}
+
+.floating-label input:focus + label, .floating-label input:not(:placeholder-shown) + label,
+.floating-label textarea:focus + label, .floating-label textarea:not(:placeholder-shown) + label {
+  transform: scale(0.85) translateY(-40px);
+  color: #78C2AD;
+  opacity: 100;
+}
+
+.floating-label input:focus, .floating-label textarea:focus {
+  outline: none;
+  border-bottom-color: #78C2AD;
+  opacity: 100;
+}
+
+
+.feedback {
+  color: red; /* Color for error messages */
+  font-size: 0.875em; /* Slightly smaller font size */
+  margin-top: 5px; /* Some space between the input field and the message */
+  height: 20px; /* Fixed height for layout consistency */
+  display: block; /* Ensure it takes up its own line */
+}
+
+
+
+
+
+
+
+
+/* Scroll to top button */
+#myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: #305f72; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+}
+
+#myBtn:hover {
+  background-color: #234653; /* Add a dark-grey background on hover */
+}
 
 
 
