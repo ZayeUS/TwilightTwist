@@ -270,8 +270,8 @@ p {
   padding: 50px 20px;
   background-color: #d3e7ee; /* Lighter pastel background for a softer look */
   text-align: center;
-  /* height: 100vh; */
-  margin-bottom: 20rem;
+  height: 100vh;
+
   
 }
 
@@ -348,7 +348,7 @@ font-size: 25px;
 @media (max-width: 900px) {
 
   .services-section {
-    margin-bottom: 0rem;
+    height: auto;
   }
   
     .services-container {
