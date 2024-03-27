@@ -33,14 +33,45 @@ window.addEventListener('scroll', () => {
 }, { passive: true }); // Improve performance by marking the listener as passive
 
 
-document.addEventListener("DOMContentLoaded", function() {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.visibility = 'visible';
-        }
-      });
-    });
-  
-    observer.observe(document.querySelector('.services-section'));
-  });
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form from submitting
+
+  // Basic validation
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const message = document.getElementById('message').value.trim();
+
+  if (!name || !email || !message) {
+    alert('Please fill in all fields.');
+    return; // Stop the function if validation fails
+  }
+
+  // Further validation can go here (e.g., email format)
+
+  // If all checks pass
+  alert('Thank you for your message!');
+  // Here, you would typically also send the form data to the server
+});
+
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent traditional form submission
+
+  const formData = new FormData(this);
+
+  fetch('twilighttwistphotobooths@gmail.com', {
+    method: 'POST',
+    body: formData,
+  })
+  .then(response => {
+    if (response.ok) {
+      return response.json();
+    }
+    throw new Error('Network response was not ok.');
+  })
+  .then(data => {
+    console.log(data);
+    alert('Thank you for your message! We will get back to you soon.');
+    // Optionally reset the form or redirect the user
+  })
+  .catch(error => console.error('There was a problem with your fetch operation:', error));
+});

@@ -20,7 +20,7 @@ select,
 textarea {
   font-family: "Poppins", sans-serif;
   color: #333;
-  background-color: #f4f6fc;
+  background-color: #d3e7ee;
   scroll-behavior: smooth;
 }
 
@@ -31,7 +31,7 @@ textarea {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  background-color: #f4f6fc; /* Pastel pink */
+  background-color: #d3e7ee; /* Pastel pink */
   padding: 1rem 4rem; /* Increase padding to accommodate larger logo text */
   height: 7rem;
 }
@@ -89,6 +89,12 @@ textarea {
   text-align: center; /* Ensures the text is centered under the image */
 }
 
+#menu p {
+  margin-left: 3.2rem !important;
+  
+
+}
+
 #menu li img {
   margin-bottom: 8px; /* Adds some space between the image and the text */
   width: 2rem; /* Adjust as needed */
@@ -108,7 +114,7 @@ textarea {
 .header-button {
     display: inline-block;
    position: relative;
-    background-color: #a7c7e7 ; /* Vibrant, attention-grabbing color */
+    background-color: #f9e2ae ; /* Vibrant, attention-grabbing color */
     color: #ffffff; /* White text for contrast */
     padding: 10px 20px; /* Ample padding for clickability */
     border-radius: 25px; /* Rounded corners for a modern look */
@@ -178,11 +184,11 @@ textarea {
     position: relative;
     text-align: center;
     padding: 4rem 1rem; /* Ample padding for text */
-    color: #ffffff; /* Light text color for contrast */
+    color:#bce6FF; /* Light text color for contrast */
     background-image: url(./images/fernando-lavin-rN2k98llNBg-unsplash.jpg);
     background-position: center; /* Center the background image */
     background-repeat: no-repeat;
-    min-height: 70vh; /* Minimum height to make it stand out */
+    min-height: 75vh; /* Minimum height to make it stand out */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -276,8 +282,10 @@ textarea {
 }
 .services-section {
   padding: 60px 20px;
-  background-color: #F0F2F5; /* Lighter pastel background for a softer look */
+  background-color: #d3e7ee; /* Lighter pastel background for a softer look */
+  text-align: center;
 }
+
 
 .services-container {
   display: flex;
@@ -306,14 +314,17 @@ textarea {
   margin-bottom: 15px; /* Increased spacing for a more airy look */
 }
 
-h2 {
+.service-card h2 {
   color: #5D5D5D; /* Softer dark shade for better readability */
   margin-bottom: 40px; /* Increased spacing for a better flow */
+  /* text-align: center; */
+  
 }
 
-h3 {
+.service-card h3 {
   color: #89ABE3FF; /* Matching the icons' softened color */
   margin: 25px 0 15px;
+  text-align: center;
 }
 
 .service-list li {
@@ -351,6 +362,89 @@ h3 {
         width: 100%; /* Adjusts card width to fit mobile screens without causing overflow */
     }
 }
+
+
+/* Contact us form */
+
+.contact-us-section {
+  padding: 60px 20px;
+  background-color: #d3e7ee;
+  text-align: center;
+}
+
+.contact-us-section h2 {
+  color: #305f72;
+  margin-bottom: 40px;
+}
+
+#contactForm {
+  max-width: 500px;
+  margin: auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-family: "Poppins", sans-serif;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.contact-button {
+  background-color: #305f72;
+  color: white;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  font-family: "Poppins", sans-serif;
+}
+
+.contact-button:hover {
+  background-color: #234653;
+  transform: scale(1.05);
+}
+
+/* Classic Elegance Form Styles */
+#contactForm input, #contactForm textarea {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.contact-button-classic {
+  background-image: linear-gradient(to right, #305f72, #234653);
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+}
+
+.contact-button-classic:hover {
+  background-image: linear-gradient(to right, #234653, #305f72);
+}
+
+#contactForm input:focus, #contactForm textarea:focus {
+  outline: none;
+  border-color: #89ABE3FF;
+  box-shadow: 0 0 8px rgba(137, 171, 245, 0.8);
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+
 
 
 /* Footer Styling */
@@ -430,7 +524,7 @@ h3 {
 }
 
 
-/* Add any additional styling here */
+
 
 
 
