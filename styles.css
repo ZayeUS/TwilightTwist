@@ -330,9 +330,9 @@ h3 {
 .service-button {
   background-color: #89ABE3FF; /* Softened primary color */
   color: white;
-  padding: 12px 18px; /* Adjusted padding for better touch targets */
+  padding: 12px 18px; /* Adjusted padding ffafaor better touch targets */
   border-radius: 25px; /* More rounded for a flowy feel */
-  text-decoration: none;
+  text-decoration: none; 
   transition: background-color 0.3s, transform 0.2s;
   margin-top: 20px;
 }
