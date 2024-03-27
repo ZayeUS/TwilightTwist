@@ -208,7 +208,7 @@ textarea {
   left: 50%;
   width: auto;
   height: auto;
-  min-width: 100%;
+  min-width: 130%;
   min-height: 100%;
   transform: translate(-50%, -50%);
   z-index: 0;
@@ -267,10 +267,12 @@ p {
 }
 .services-section {
   
-  padding: 150px 20px;
+  padding: 50px 20px;
   background-color: #d3e7ee; /* Lighter pastel background for a softer look */
   text-align: center;
-  height: 100vh;
+  /* height: 100vh; */
+  margin-bottom: 20rem;
+  
 }
 
 
@@ -344,8 +346,14 @@ font-size: 25px;
 
 
 @media (max-width: 900px) {
+
+  .services-section {
+    margin-bottom: 0rem;
+  }
+  
     .services-container {
         flex-direction: column;
+
     }
     .service-card {
         width: 100%; /* Adjusts card width to fit mobile screens without causing overflow */
@@ -462,14 +470,6 @@ font-size: 25px;
   opacity: 100;
 }
 
-
-.feedback {
-  color: red; /* Color for error messages */
-  font-size: 0.875em; /* Slightly smaller font size */
-  margin-top: 5px; /* Some space between the input field and the message */
-  height: 20px; /* Fixed height for layout consistency */
-  display: block; /* Ensure it takes up its own line */
-}
 
 
 .form-response {
