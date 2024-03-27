@@ -1,0 +1,548 @@
+/* Reset some default browser styles */
+body,
+ul {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+
+/* Basic styling */
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  background-color: #f4f6fc;
+  scroll-behavior: smooth;
+}
+
+/* Navbar styling */
+#navbar {
+    margin-right: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #f4f6fc; /* Pastel pink */
+  padding: 1rem 4rem; /* Increase padding to accommodate larger logo text */
+  height: 7rem;
+}
+
+.logo {
+    display: flex;
+    justify-content: flex-start; /* Corrected for horizontal alignment */
+    align-items: center;
+    height: 8rem !important;
+    overflow: hidden;
+  }
+
+.logo img {
+  margin-top: 1rem;
+  margin-left: -4rem; /* Adjust this as needed */
+  align-items: center;
+  max-width: 20rem;
+  height: 20rem;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* Adding some magic with shadows */
+
+.hamburger-menu {
+  display: none; /* Hidden by default, shown in mobile view */
+  cursor: pointer;
+
+}
+
+.hamburger-menu .bar {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: all 0.3s ease-in-out;
+}
+/* Menu styling */
+#menu {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: auto;
+  margin-top: auto;
+  z-index: 1000;
+}
+
+#menu li {
+  margin-right: 1rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column; /* Stacks flex items vertically */
+  align-items: center; /* Centers the items horizontally */
+  text-align: center; /* Ensures the text is centered under the image */
+}
+
+#menu li img {
+  margin-bottom: 8px; /* Adds some space between the image and the text */
+  width: 2rem; /* Adjust as needed */
+  height: auto; /* Maintains the aspect ratio of the image */
+}
+
+#menu li a {
+  text-decoration: none;
+  color: #305f72; /* Keeping a readable contrast, but consider Pastel Blue #A7C7E7 for hover effects */
+  font-weight: 500;
+}
+
+
+
+
+/* header BUTTON */
+.header-button {
+    display: inline-block;
+   position: relative;
+    background-color: #a7c7e7 ; /* Vibrant, attention-grabbing color */
+    color: #ffffff; /* White text for contrast */
+    padding: 10px 20px; /* Ample padding for clickability */
+    border-radius: 25px; /* Rounded corners for a modern look */
+    text-decoration: none; /* Removes underline from link */
+    font-weight: 600; /* Bold text */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions for interactivity */
+    margin-top: -1rem; /* Space between the text and the button */
+    font-size: 1rem; /* Adequate font size for legibility */
+    cursor: pointer !important;
+    z-index:  3;;
+    margin-left: 3rem;
+  }
+
+  .header-button:hover, .header-button:focus {
+    opacity: 80%;
+    transform: translateY(-2px); /* Subtle lift effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  }
+
+/* Hamburger menu bars transformation */
+.hamburger-menu.open .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-menu.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.open .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.hamburger-menu .bar {
+  display: block;
+  width: 30px;
+  height: 3px;
+  margin: 6px auto;
+  transition: all 0.3s ease-in-out;
+  background-color: #333;
+}
+
+/* Hover effects for menu items */
+
+/* #menu li a img:hover,#menu li a img:focus, #menu li a:hover, #menu li a:focus {
+    opacity: 80%;
+    transform: translateY(-2px); /* Subtle lift effect 
+    background-color: #f4f6fc;
+    background-color: transparent;
+} */
+
+#menu li:hover,#menu li:focus{
+   
+        opacity: 80%;
+        transform: translateY(-2px); /* Subtle lift effect */
+        background-color: #f4f6fc;
+        background-color: transparent;
+
+}
+
+
+/* HERO SECTION */
+
+/* Hero section styling */
+/* Hero section styling */
+.hero {
+    margin-top: 3rem;
+    position: relative;
+    text-align: center;
+    padding: 4rem 1rem; /* Ample padding for text */
+    color: #ffffff; /* Light text color for contrast */
+    background-image: url(./images/fernando-lavin-rN2k98llNBg-unsplash.jpg);
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat;
+    min-height: 70vh; /* Minimum height to make it stand out */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.hero h1 {
+    font-size: 2.5rem; /* Larger font size for main heading */
+    margin-bottom: 0.5rem; /* Adjust spacing between heading and paragraph */
+    color: inherit; /* Inherits the color from .hero for better control */
+    font-weight: 700; /* Bold font weight for heading */
+}
+
+.hero p {
+    font-size: 1.2rem; /* Slightly larger font size for subtext */
+    max-width: 600px; /* Max width to control line length */
+    margin: 0 auto; /* Centers the text block horizontally */
+    color: inherit; /* Inherits the color from .hero for better control */
+}
+
+/* Directly style the overlay div */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+    z-index: 1; /* Ensures overlay is above the background image but below content */
+}
+
+/* Ensure content is above the overlay */
+.hero h1, .hero p {
+    position: relative;
+    z-index: 2;
+}
+
+/* Hero BUTTON */
+.hero-button {
+    display: inline-block;
+    position: relative;
+    background-color: #004369; /* Vibrant, attention-grabbing color */
+    color: #ffffff; /* White text for contrast */
+    padding: 10px 20px; /* Ample padding for clickability */
+    border-radius: 25px; /* Rounded corners for a modern look */
+    text-decoration: none; /* Removes underline from link */
+    font-weight: 600; /* Bold text */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions for interactivity */
+    margin-top: 20px; /* Space between the text and the button */
+    font-size: 1rem; /* Adequate font size for legibility */
+    cursor: pointer;
+    z-index: 3;
+}
+
+.hero-button:hover, .hero-button:focus {
+    opacity: 80%;
+    transform: translateY(-2px); /* Subtle lift effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+    .hero {
+        padding: 2rem 1rem; /* Reduce padding on smaller screens */
+        min-height: 60vh; /* Increase height on smaller screens for better coverage */
+        background-size: cover !important;
+       
+    }
+
+    .hero h1 {
+        font-size: 1.8rem; /* Adjust font size for smaller screens */
+    }
+
+    .hero p {
+        font-size: 1rem; /* Adjust paragraph font size for readability */
+        max-width: 90%; /* Adjust max width for smaller screens */
+    }
+
+    .hero-button {
+        padding: 8px 16px; /* Adjust button padding for smaller screens */
+        font-size: 0.9rem; /* Adjust button font size */
+    }
+}
+
+/* SERVICES SECTION */
+
+/* Apply box-sizing globally */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.services-section {
+    text-align: center;
+    padding: 4rem 1rem;
+    background-color: #f4f6fc;
+}
+
+.services-section h2 {
+    color: #305f72;
+    margin-bottom: 2rem;
+}
+
+.services-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    align-items: center;
+}
+
+.service-card {
+    width: calc(50% - 20px);
+    background-color: #ffffff;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #DAA520;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background-color: #004369;
+    border-radius: 15px 15px 0 0;
+    z-index: 0;
+}
+
+.service-card h3 {
+    margin-top: 2.5rem;
+    color: #003366;
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: #DAA520;
+    margin-bottom: -3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.service-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.service-list li {
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.service-list i {
+    color: #DAA520;
+    margin-right: 8px;
+}
+
+.service-button {
+    background-color: #003366;
+    color: #F9F9F9;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 20px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    border: 1px solid #003366;
+}
+
+.service-button:hover {
+    opacity: 90%;
+    transform: translateY(-4px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #003395;
+}
+
+@media (max-width: 768px) {
+    .services-container {
+        flex-direction: column;
+    }
+    .service-card {
+        width: 100%; /* Adjusts card width to fit mobile screens without causing overflow */
+    }
+}
+
+
+/* Footer Styling */
+
+.site-footer {
+    background-color: #305f72;
+    color: #f4f6fc;
+    padding: 2rem 2rem 0 2rem; /* Adjusted padding to remove bottom padding */
+    font-size: 0.9rem;
+    min-width: 8;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: .5rem;
+}
+
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 1rem 0;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 220px;
+    margin-right: 1.5rem;
+}
+
+.footer-column h3 {
+    color: #f4f6fc;
+    margin-bottom: 1rem;
+}
+
+.social-links a {
+    color: #f4f6fc;
+    margin-right: 10px;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #a7c7e7;
+}
+
+.footer-links {
+    
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li a {
+    color: #f4f6fc;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-links li a:hover {
+    color: #f4f6fc;
+}
+
+.trademark {
+    text-align: center;
+    width: 100%;
+    color: #f4f6fc;
+}
+
+@media (max-width: 768px) {
+    .footer-row {
+        flex-direction: column;
+    }
+    .footer-column {
+        margin-bottom: 1rem;
+    }
+}
+
+
+/* Add any additional styling here */
+
+
+
+
+
+  
+/* Animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  /* Responsive styling for mobile */
+  .logo {
+    text-align: center;
+    width: 100%;
+    order: -1; /* Moves the logo to the top */
+    font-size: 1.8rem; /* Smaller font size for mobile */
+  }
+
+  .logo img {
+    max-width: 100%; /* Make the image take up to 100% of its container's width */
+    margin-right: 1em; /* Adjust margin for smaller screens */
+    /* height: auto; is implicit from the non-media query rules */
+    margin-left: 1rem; /* Adjust this as needed */
+  }
+
+  .hamburger-menu {
+    display: block;
+    position: fixed; /* or 'absolute' depending on your layout */
+    top: 0; /* Aligns to the top */
+    right: 0; /* Aligns to the right */
+    z-index: 1000; /* Ensures it's above other content */
+    margin-right: 2em; /* Adjusts margin for visual spacing */
+    margin-top: 1em; /* Adjusts margin for visual spacing */
+  }
+
+  /* Adjustments for when the hamburger menu is open */
+  .hamburger-menu.open .bar:nth-child(1){
+    transform: rotate(45deg) translate(0, 10);
+  }
+
+  .hamburger-menu.open .bar:nth-child(2) {
+    
+    opacity: 0;
+  }
+
+  .hamburger-menu.open .bar:nth-child(3) {
+    transform: translateY(5) rotate(-45deg);
+  }
+
+  #menu {
+    background-color: #ececec; /* Slightly different shade than navbar */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 8rem; /* Adjust based on your navbar's height */
+    left: 0;
+    width: 100%;
+    display: none;
+    animation: slideDown 0.5s forwards;
+    margin-top: 1rem;
+  }
+  #menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  #menu li {
+    padding: 15px;
+    border-bottom: 1px solid #ddd; /* Separates items visually */
+  }
+  #menu li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+  }
+  .header-button{
+    margin-left: 0rem;
+  }
+
+}
+
