@@ -77,6 +77,20 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+var mySwiper = new Swiper('.mySwiper', {
+  spaceBetween: 3, // Remove space between slides for a continuous look
+  centeredSlides: true,
+  loop: true,
+  autoplay: {
+    delay: 0, // No delay for continuous movement
+    disableOnInteraction: false,
+    speed: 2000, // Adjust speed to control flow, higher for slower movement
+  },
+  speed: 2000, // Match the speed here
+  slidesPerView: 'auto', // Adjust based on number of slides to view at once
+  allowTouchMove: false, // Disables swiping to keep the flow constant
+});
+
 
 
 

@@ -34,7 +34,8 @@ textarea {
   flex-wrap: wrap;
   background-color: #d3e7ee; /* Pastel pink */
   padding: 1rem 4rem; /* Increase padding to accommodate larger logo text */
-  height: 7rem;
+  height: 10rem;
+  z-index: 1;
 }
 
 .logo {
@@ -43,6 +44,7 @@ textarea {
     align-items: center;
     height: 8rem !important;
     overflow: hidden;
+    z-index: 1;
   }
 
 .logo img {
@@ -79,6 +81,7 @@ textarea {
   margin-bottom: auto;
   margin-top: auto;
   z-index: 1000;
+  
 }
 
 #menu li {
@@ -112,6 +115,8 @@ textarea {
 
 
 /* header BUTTON */
+
+
 .header-button {
     display: inline-block;
    position: relative;
@@ -125,7 +130,7 @@ textarea {
     margin-top: -1rem; /* Space between the text and the button */
     font-size: 1rem; /* Adequate font size for legibility */
     cursor: pointer !important;
-    z-index:  3;;
+    z-index:  3;
     margin-left: 3rem;
   }
 
@@ -179,101 +184,80 @@ textarea {
 /* HERO SECTION */
 
 /* Hero section styling */
-/* Hero section styling */
-.hero {
-    margin-top: 3rem;
-    position: relative;
-    text-align: center;
-    padding: 4rem 1rem; /* Ample padding for text */
-    color:#bce6FF; /* Light text color for contrast */
-    background-image: url(./images/fernando-lavin-rN2k98llNBg-unsplash.jpg);
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat;
-    min-height: 75vh; /* Minimum height to make it stand out */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+/* Enhanced and Updated Styling */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  height: 90vh;
 }
 
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 100%);
 
-.hero h1 {
-    font-size: 2.5rem; /* Larger font size for main heading */
-    margin-bottom: 0.5rem; /* Adjust spacing between heading and paragraph */
-    color: inherit; /* Inherits the color from .hero for better control */
-    font-weight: 700; /* Bold font weight for heading */
+  z-index: 1;
 }
 
-.hero p {
-    font-size: 1.2rem; /* Slightly larger font size for subtext */
-    max-width: 600px; /* Max width to control line length */
-    margin: 0 auto; /* Centers the text block horizontally */
-    color: inherit; /* Inherits the color from .hero for better control */
+.hero-background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
 }
 
-/* Directly style the overlay div */
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
-    z-index: 1; /* Ensures overlay is above the background image but below content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #FFFFFF;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
 }
 
-/* Ensure content is above the overlay */
-.hero h1, .hero p {
-    position: relative;
-    z-index: 2;
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 300;
 }
 
-/* Hero BUTTON */
+p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
 .hero-button {
-    display: inline-block;
-    position: relative;
-    background-color: #004369; /* Vibrant, attention-grabbing color */
-    color: #ffffff; /* White text for contrast */
-    padding: 10px 20px; /* Ample padding for clickability */
-    border-radius: 25px; /* Rounded corners for a modern look */
-    text-decoration: none; /* Removes underline from link */
-    font-weight: 600; /* Bold text */
-    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions for interactivity */
-    margin-top: 20px; /* Space between the text and the button */
-    font-size: 1rem; /* Adequate font size for legibility */
-    cursor: pointer;
-    z-index: 3;
+  background-color: transparent;
+  border: 2px solid #FFD700; /* Gold for elegance */
+  color: #FFD700;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
-.hero-button:hover, .hero-button:focus {
-    opacity: 80%;
-    transform: translateY(-2px); /* Subtle lift effect */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+.hero-button:hover {
+  background-color: #FFD700;
+  color: #000;
 }
 
-/* Media query for mobile responsiveness */
-@media (max-width: 768px) {
-    .hero {
-        padding: 2rem 1rem; /* Reduce padding on smaller screens */
-        min-height: 60vh; /* Increase height on smaller screens for better coverage */
-        background-size: cover !important;
-       
-    }
-
-    .hero h1 {
-        font-size: 1.8rem; /* Adjust font size for smaller screens */
-    }
-
-    .hero p {
-        font-size: 1rem; /* Adjust paragraph font size for readability */
-        max-width: 90%; /* Adjust max width for smaller screens */
-    }
-
-    .hero-button {
-        padding: 8px 16px; /* Adjust button padding for smaller screens */
-        font-size: 0.9rem; /* Adjust button font size */
-    }
+.elegant-caption {
+  font-style: italic;
+  margin-top: 20px;
+  font-weight: lighter;
 }
+
 
 /* SERVICES SECTION */
 
@@ -282,9 +266,11 @@ textarea {
     box-sizing: border-box;
 }
 .services-section {
-  padding: 60px 20px;
+  
+  padding: 150px 20px;
   background-color: #d3e7ee; /* Lighter pastel background for a softer look */
   text-align: center;
+  height: 100vh;
 }
 
 
@@ -357,7 +343,7 @@ font-size: 25px;
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .services-container {
         flex-direction: column;
     }
@@ -370,8 +356,9 @@ font-size: 25px;
 /* Contact us form */
 
 .contact-us-container {
+  height: 100vh;
   background-color: #FAF9F9; /* A very light background */
-  padding: 80px 20px;
+  padding: 150px 20px;
   text-align: center;
 }
 
@@ -526,8 +513,6 @@ font-size: 25px;
 
 
 
-
-
 /* Scroll to top button */
 #myBtn {
   display: none; /* Hidden by default */
@@ -617,7 +602,7 @@ font-size: 25px;
     color: #f4f6fc;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .footer-row {
         flex-direction: column;
     }
@@ -646,7 +631,7 @@ font-size: 25px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   /* Responsive styling for mobile */
   .logo {
     text-align: center;

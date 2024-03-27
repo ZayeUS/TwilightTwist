@@ -17,6 +17,10 @@
       src="https://kit.fontawesome.com/37700e351b.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
   </head>
   <body>
     <header>
@@ -35,22 +39,22 @@
             <a href="#"><img src="/images/house.png" alt="Homr" /></a>
             <a href="#">Home</a>
           </li>
-          <li>
+          <!-- <li>
             <a href="#"><img src="/images/cheers.png" alt="Events" /></a>
             <a href="#">Events</a>
-          </li>
+          </li> -->
           <li>
-            <a href="#"><img src="/images/dollar.png" alt="Services" /></a>
-            <a href="#">Services</a>
+            <a href="#services"><img src="/images/dollar.png" alt="Services" /></a>
+            <a href="#services">Services</a>
           </li>
-          <li>
+          <!-- <li>
             <a href="#"><img src="/images/gallery.png" alt="Gallery " /></a>
             <a href="#">Gallery</a>
-          </li>
+          </li> -->
           <div>
             <p>Fargo, ND <br/> 701-639-3862</p>
           <li>
-            <a href="#" class="header-button">Contact US</a>
+            <a href="#contact-us-section" class="header-button">Contact US</a>
           </li>
         </div>
         </ul>
@@ -59,15 +63,27 @@
 
     <main>
       <!-- Your main content here -->
-      <section class="hero">
-        <div class="hero-overlay"></div>
-        <!-- Overlay Div -->
-        <h1>Twilight Twist Photobooths</h1>
-        <p>Adding Customizable life to Your Events.</p>
-        <a href="#" class="hero-button">CONTACT US</a>
+      <section class="hero-section">
+        <div class="video-overlay"></div>
+        <video class="hero-background-video" autoplay muted loop playsinline>
+          <source src="./images/fun_fair_-_43 (360p).mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+        <div class="hero-content">
+          <h1>Welcome to Twilight Twist Photobooths</h1>
+          <p>Bring unparalleled fun to any event with our customizable photobooths.</p>
+          <a href="#contact-us-section" class="hero-button">Book Now</a>
+          <div class="additional-elements">
+            <p class="elegant-caption">Turning Snaps into Memories</p>
+            <!-- Add icons or additional CTAs here -->
+          </div>
+        </div>
       </section>
+      
+      
+      
       <!-- Service Card Section-->
-      <section class="services-section">
+      <section id="services" class="services-section">
         <h2>Our Services</h2>
         <div class="services-container">
           <div class="service-card">
@@ -161,8 +177,10 @@
           <div id="formResponse" class="form-response"></div>
         </div>
       </section>
-      
+    
       </section>
+      
+
       <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     </main>
     <footer>
