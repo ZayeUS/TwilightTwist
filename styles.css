@@ -534,6 +534,63 @@ font-size: 25px;
 }
 
 
+/* INSTAGRAM */
+.instagram-section {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f4f6fc; /* Soft background for visual comfort */
+}
+
+.instagram-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px; /* Reduced gap for closer images */
+  margin-top: 20px;
+}
+
+.instagram-container a {
+  display: block;
+  width: 200px; /* Smaller width for images */
+  overflow: hidden;
+  border-radius: 10px; /* Soft rounded corners for images */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.instagram-container img {
+  width: 100%; /* Ensure images fill the link block */
+  height: auto;
+  transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+}
+
+.instagram-container a:hover img {
+  transform: scale(1.1); /* Slightly zoom in images on hover */
+}
+
+.instagram-container a:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Increased shadow for lifted effect */
+}
+
+.instagram-button {
+  background-color: #305f72; /* Primary button color */
+  color: #ffffff; /* Text color */
+  padding: 10px 20px; /* Ample padding */
+  border-radius: 25px; /* Fully rounded edges for a flowy look */
+  text-decoration: none; /* Remove underline from links */
+  display: inline-block; /* Enable the use of margin and padding */
+  margin-top: 30px; /* Spacing between the gallery and button */
+  transition: background-color 0.3s, transform 0.2s; /* Transition for hover effects */
+}
+
+.instagram-button:hover {
+ 
+  transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+
+
 
 /* Footer Styling */
 
