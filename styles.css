@@ -201,6 +201,22 @@ textarea {
 
   z-index: 1;
 }
+.hero-button, .instagram-button {
+  background-color: #305f72; /* Updated to use the primary color scheme */
+  color: #ffffff; /* White text for contrast */
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: none; /* Remove any border */
+}
+
+.hero-button:hover, .instagram-button:hover {
+  background-color: #234653; /* Darker shade on hover */
+  color: #ffffff;
+}
+
 
 .hero-background-video {
   position: absolute;
@@ -236,16 +252,6 @@ p {
   margin-bottom: 2rem;
 }
 
-.hero-button {
-  background-color: transparent;
-  border: 2px solid #FFD700; /* Gold for elegance */
-  color: #FFD700;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
 
 .hero-button:hover {
   background-color: #FFD700;
@@ -364,110 +370,103 @@ font-size: 25px;
 /* Contact us form */
 
 .contact-us-container {
-  height: 110vh;
-  background-color: #FAF9F9; /* A very light background */
-  padding: 150px 20px;
+  background-color: #FAF9F9; /* A very light background for contrast */
+  padding: 50px 20px; /* Adjusted padding for better spacing */
   text-align: center;
 }
 
 .contact-us-content {
-  background-color: #FFFFFF; /* Pure white for contrast */
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  background-color: #FFFFFF; /* Pure white for focus */
+  max-width: 500px; /* Limiting the width for better form management */
+  margin: 0 auto; /* Center aligning */
+  padding: 40px; /* Ample space inside */
+  border-radius: 15px; /* Soft rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-.contact-us-container h2 {
-  color: #305f72; /* A soft, deep blue */
-  margin-bottom: 10px;
-}
-
+.contact-us-container h2,
 .contact-us-container p {
-  color: #6C757D; /* Soft grey for text */
-  margin-bottom: 30px;
+  margin-bottom: 20px; /* Consistent spacing */
 }
 
 #contactForm {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 20px; /* Space between form fields */
 }
 
-#contactForm .form-group input,
-#contactForm .form-group textarea {
+#contactForm .form-group {
+  position: relative; /* For floating labels */
+}
+
+#contactForm input[type="text"],
+#contactForm input[type="email"],
+#contactForm textarea {
+  width: 100%; /* Full width to accommodate various screen sizes */
   padding: 15px;
-  border-radius: 20px;
-  border: 1px solid #E3E4E6; /* Very light border */
-  background-color: #EEF2F3; /* Light pastel background */
-  color: #495057; /* Darker text for contrast */
-}
-
-#contactForm .form-group input:focus,
-#contactForm .form-group textarea:focus {
-  outline: none;
-  border: 1px solid #ADB5BD; /* Slightly darker border on focus */
-}
-
-.contact-button {
-  padding: 10px 0;
-  background-color: #78C2AD; /* Soft green */
-  color: #FFFFFF;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s;
-}
-
-.contact-button:hover {
-  background-color: #5DA08E; /* A darker shade of the button color for hover state */
-}
-
-
-#contactForm .form-group input:focus, #contactForm .form-group textarea:focus {
-  outline: none;
-  border: 2px solid #89ABE3FF; /* Highlight color */
-  transition: border 0.3s ease-in-out;
-}
-
-.floating-label {
-  position: relative;
-  margin-bottom: 20px;
-}
-
-.floating-label input, .floating-label textarea {
-  width: 100%;
-  padding: 15px 15px 15px 0;
-  border: none;
-  border-bottom: 2px solid #E3E4E6;
-  background-color: transparent;
-  transition: border-color 0.2s;
+  border-radius: 5px; /* Rounded edges for input fields */
+  border: 1px solid #ccc; /* Subtle border color */
+  margin-bottom: 20px; /* Spacing below each field */
 }
 
 .floating-label label {
   position: absolute;
-  top: 1rem;
-  left: 0;
-  pointer-events: none;
-  transition: transform 0.2s ease-out, color 0.2s;
-  transform-origin: center;
-  color: #ADB5BD;
-  opacity: 0;
+  left: 15px;
+  top: 10px; /* Adjust based on padding for alignment */
+  background-color: #FFFFFF;
+  padding: 0 5px;
+  transition: all 0.3s ease; /* Smooth transition for label */
+  pointer-events: none; /* Allows click to pass through to input */
+  color: #999; /* Subtle label color */
 }
 
-.floating-label input:focus + label, .floating-label input:not(:placeholder-shown) + label,
-.floating-label textarea:focus + label, .floating-label textarea:not(:placeholder-shown) + label {
-  transform: scale(0.85) translateY(-40px);
-  color: #78C2AD;
-  opacity: 100;
+.floating-label input:placeholder-shown + label,
+.floating-label textarea:placeholder-shown + label {
+  opacity: 0; /* Hide label when placeholder is shown */
+  transform: translateY(-20px); /* Move label out of the way */
+  background-color: #FFFFFF;
 }
 
-.floating-label input:focus, .floating-label textarea:focus {
-  outline: none;
-  border-bottom-color: #78C2AD;
-  opacity: 100;
+.floating-label input:not(:placeholder-shown) + label,
+.floating-label input:focus + label,
+.floating-label textarea:not(:placeholder-shown) + label,
+.floating-label textarea:focus + label {
+  opacity: 1; /* Show label when input is focused or filled */
+  transform: translateY(-35px); /* Move label above the input field */
+  color: #305f72; /* Highlight color for active/focus state */
+  background-color: transparent;
+}
+
+.contact-button {
+  width: 100%; /* Full width button */
+  padding: 10px 0;
+  background-color: #305f72; /* Primary color for button */
+  color: #FFFFFF; /* Text color */
+  border: none;
+  border-radius: 5px; /* Rounded button edges */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.contact-button:hover {
+  background-color: #234653; /* Darker shade on hover */
+}
+
+@media (max-width: 768px) {
+  .contact-us-content {
+    padding: 20px; /* Reduced padding on smaller screens */
+  }
+  
+  .floating-label label {
+    top: 15px; /* Adjust label position on mobile */
+  }
+  
+  .floating-label input:not(:placeholder-shown) + label,
+  .floating-label input:focus + label,
+  .floating-label textarea:not(:placeholder-shown) + label,
+  .floating-label textarea:focus + label {
+    transform: translateY(-25px); /* Adjusted for smaller screens */
+  }
 }
 
 
@@ -595,78 +594,83 @@ font-size: 25px;
 /* Footer Styling */
 
 .site-footer {
-    background-color: #305f72;
-    color: #f4f6fc;
-    padding: 2rem 2rem 0 2rem; /* Adjusted padding to remove bottom padding */
-    font-size: 0.9rem;
-    min-width: 8;
+  background-color: #305f72;
+  color: #f4f6fc;
+  padding: 2rem;
+  font-size: 0.9rem;
 }
 
 .footer-container {
-    max-width: 1200px;
-    margin: auto;
-    padding: .5rem;
-}
-
-.footer-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .footer-column {
-    flex: 1;
-    min-width: 220px;
-    margin-right: 1.5rem;
+  flex: 1;
+  min-width: 220px;
+  margin-bottom: 1rem;
 }
 
 .footer-column h3 {
-    color: #f4f6fc;
-    margin-bottom: 1rem;
+  color: #f4f6fc;
+  margin-bottom: 1rem;
 }
 
 .social-links a {
-    color: #f4f6fc;
-    margin-right: 10px;
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
+  color: #f4f6fc;
+  margin-right: 10px;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-    color: #a7c7e7;
+  color: #a7c7e7;
 }
 
 .footer-links {
-    
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .footer-links li a {
-    color: #f4f6fc;
-    text-decoration: none;
-    transition: color 0.2s ease;
+  color: #f4f6fc;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .footer-links li a:hover {
-    color: #f4f6fc;
+  color: #a7c7e7;
 }
 
 .trademark {
-    text-align: center;
-    width: 100%;
-    color: #f4f6fc;
+  text-align: center;
+  width: 100%;
+  color: #f4f6fc;
+  margin-top: 1rem;
 }
 
-@media (max-width: 900px) {
-    .footer-row {
-        flex-direction: column;
-    }
-    .footer-column {
-        margin-bottom: 1rem;
-    }
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-column {
+    margin-bottom: 2rem;
+  }
+
+  /* Ensuring social links are centered for smaller screens */
+  .social-links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
 }
+
 
 
 
