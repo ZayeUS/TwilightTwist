@@ -580,7 +580,7 @@ font-size: 25px;
   border-radius: 25px; /* Fully rounded edges for a flowy look */
   text-decoration: none; /* Remove underline from links */
   display: inline-block; /* Enable the use of margin and padding */
-  margin-top: 30px; /* Spacing between the gallery and button */
+  margin-top: 10px; /* Spacing between the gallery and button */
   transition: background-color 0.3s, transform 0.2s; /* Transition for hover effects */
 }
 
