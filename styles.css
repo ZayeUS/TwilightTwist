@@ -268,103 +268,100 @@ p {
 /* SERVICES SECTION */
 
 /* Apply box-sizing globally */
+/* Enhanced Global Styles */
 *, *::before, *::after {
     box-sizing: border-box;
 }
+
+/* Refined Services Section */
 .services-section {
-  
-  padding: 50px 20px;
-  background-color: #d3e7ee; /* Lighter pastel background for a softer look */
-  text-align: center;
-  height: 100vh;
-
-  
+    padding: 50px 20px;
+    background-color: #d3e7ee; /* Preserving the light pastel background */
+    text-align: center;
+    height: auto; /* Adjusted for content scalability */
+    padding-bottom: 80px; /* Added to prevent content from touching the footer */
 }
 
-
+/* Improved Services Container */
 .services-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
+/* Upgraded Service Card Design */
 .service-card {
-  background: #ffffff; /* Pure white to contrast softly with the background */
-  border-radius: 16px; /* More pronounced rounded corners for a softer look */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow for depth */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: calc(50% - 10px);
-  padding: 25px; /* Slightly increased padding for more space */
-  box-sizing: border-box;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: calc(33.333% - 20px); /* Adjust for three items per row */
+    padding: 25px;
+    margin-bottom: 20px; /* Added for spacing between rows */
 }
 
 .service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Enhanced hover effect */
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
+/* Icon and Text Enhancements */
 .service-icon {
-font-size: 25px;
-  color: #89ABE3FF; /* Softened primary color for icons */
-  margin-bottom: 15px; /* Increased spacing for a more airy look */
-  
-}
-
-.service-card h2 {
-  color: #5D5D5D; /* Softer dark shade for better readability */
-  margin-bottom: 40px; /* Increased spacing for a better flow */
-  /* text-align: center; */
-  
+    font-size: 25px;
+    color: #89ABE3FF;
+    margin-bottom: 15px;
 }
 
 .service-card h3 {
-  color: #305f72;
-  margin: 25px 0 15px;
-  text-align: center;
+    color: #305f72;
+    margin-bottom: 15px; /* Adjusted for visual balance */
 }
 
 .service-list li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px; /* Increased spacing for readability */
+    align-items: center;
+    margin-bottom: 10px;
 }
 
 .fa-regular.fa-circle-check {
-  color: #77DD77; /* Pastel success color for checks */
-  margin-right: 10px; /* Slightly more spacing */
+    color: #77DD77;
+    margin-right: 10px;
 }
 
+/* Button Styling for Better User Engagement */
 .service-button {
-  background-color: #89ABE3FF; /* Softened primary color */
-  color: white;
-  padding: 12px 18px; /* Adjusted padding ffafaor better touch targets */
-  border-radius: 25px; /* More rounded for a flowy feel */
-  text-decoration: none; 
-  transition: background-color 0.3s, transform 0.2s;
-  margin-top: 20px;
+    background-color: #89ABE3FF;
+    color: white;
+    padding: 10px 16px; /* Slightly adjusted for a balanced look */
+    border-radius: 20px; /* Less rounded for a modern feel */
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+    font-weight: 600; /* Bold text for emphasis */
+    display: inline-block; /* Ensures proper spacing and alignment */
 }
 
 .service-button:hover {
-  background-color: #6D8EAD; /* Darkened on hover for contrast */
-  transform: scale(1.05); /* Slight enlargement for interactive feedback */
+    background-color: #6D8EAD;
+    transform: scale(1.05);
 }
 
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+    .service-card {
+        width: calc(50% - 20px); /* Two items per row for tablets */
+    }
+}
 
-@media (max-width: 900px) {
-
-  .services-section {
-    height: auto;
-  }
-  
+@media (max-width: 768px) {
     .services-container {
         flex-direction: column;
-
     }
+    
     .service-card {
-        width: 100%; /* Adjusts card width to fit mobile screens without causing overflow */
+        width: 100%; /* Full width cards for mobile */
     }
 }
+
 
 
 /* Contact us form */
