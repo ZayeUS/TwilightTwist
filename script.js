@@ -110,3 +110,18 @@ function topFunction() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+  });
+
+  window.addEventListener('scroll', () => {
+      if (navLinks.classList.contains('open')) {
+          navLinks.classList.remove('open');
+      }
+  });
+});
